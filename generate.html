@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <nav>
+            <h1>
+                <a href="index.html">omega</a>
+            </h1>
+            <ul class="desk-nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <menu>
+                <div class="menu"></div>
+                <div class="menu"></div>
+                <div class="menu"></div>
+            </menu>
+        </nav>
+        <div class="phone-nav">
+            <ul id="phone-nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <button id="phone-nav-btn">Close</button>
+        </div>
+        <div class="content-container">
+            <div class="guess-img">
+                <div class="img-container">
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess" /></div>
+                </div>
+            </div>
+            <div class="text-container">
+                <div class="text">
+                    <div class="welcome">
+                        <h1>omni start</h1>
+                    </div>
+                    <div class="some-information">
+                        <form action="guess.html" method="get" id="level">
+                            <ul class="select-level">
+                                <strong>Select hardness level</strong>
+                                <li>
+                                    <input type="radio" name="level" id="beginer" value="beginer" checked/><label
+                                        for="beginer">Beginer</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="level" id="medium" value="medium" /><label
+                                        for="medium">Medium</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="level" id="hard" value="hard" /><label
+                                        for="hard">Hard</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="level" id="too hard" value="too hard" /><label
+                                        for="too hard">Too hard</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="level" id="extream" value="extream" /><label
+                                        for="extream">Extream</label>
+                                </li>
+                            </ul>
+                        </form>
+                        <div class="info">
+                            <span>Beginer mean you get more time to remember the picture before
+                                the guess.</span>
+                            <span>Extream mean you get less time to remember the picture before
+                                the guess.</span>
+                        </div>
+                    </div>
+                    <div class="btn">
+
+                        <button form="level" type="submit">start</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-line"></div>
+    </div>
+
+    <script src="scripts/menu.js"></script>
+    <script>
+        var elements = document.getElementsByClassName("for-guess");
+        const points2 = [
+            "Avenger_Profile/ant.png",
+            "Avenger_Profile/captain.png",
+            "Avenger_Profile/doctor.png",
+            "Avenger_Profile/hawkeye.png",
+            "Avenger_Profile/hulk.png",
+            "Avenger_Profile/loki.png",
+            "Avenger_Profile/panther.png",
+            "Avenger_Profile/rocket.png",
+            "Avenger_Profile/sam.png",
+            "Avenger_Profile/spider.png",
+            "Avenger_Profile/star.png",
+            "Avenger_Profile/thor.png",
+            "Avenger_Profile/tony.png",
+            "Avenger_Profile/vision.png",
+            "Avenger_Profile/wanda.png",
+            "Avenger_Profile/widow.png",
+        ];
+        function suffle(argu) {
+            return argu.sort(function (a, b) {
+                return 0.5 - Math.random();
+            });
+        }
+        var time_out = 0;
+        var Time = setInterval(function () {
+            time_out++;
+            if (time_out > 250) {
+                clearInterval(Time);
+            } else {
+                console.log(time_out);
+                var rand = suffle(points2);
+                for (let i = 0; i < points2.length; i++) {
+                    const element = rand[i];
+                    elements[i].src = element;
+                    console.log(elements[i]);
+                }
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

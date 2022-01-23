@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="main-container">
+        <nav>
+            <h1>
+                <a href="index.html">omega</a>
+            </h1>
+            <ul class="desk-nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <menu>
+                <div class="menu"></div>
+                <div class="menu"></div>
+                <div class="menu"></div>
+            </menu>
+        </nav>
+        <div class="phone-nav">
+            <ul id="phone-nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <button id="phone-nav-btn">Close</button>
+        </div>
+        <div class="content-container">
+            <div class="guess-img">
+                <div class="img-container">
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                    <div class="img-box"><img src="" alt="" class="for-guess"></div>
+                </div>
+            </div>
+            <div class="text-container">
+                <div class="text">
+
+                    <div class="welcome">
+                        <h1>welcome to the guess game</h1>
+                        <span class="title-footer">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, explicabo.</span>
+                    </div>
+                    <ul>
+                        <strong>Note:-</strong>
+                        <!-- <li><strong>note:-</strong></li> -->
+                        <li>Please follow the rules.</li>
+                        <li>You have total <strong>80</strong> poits.</li>
+                        <!-- <li>You have to archive minimum <strong>30</strong> points to continue.</li> -->
+                        <li>You'll get <strong>5</strong> poits if your answer is correct.</li>
+                        <li>You have total <strong>5</strong> life to guess wrong answer.</li>
+                        <!-- <li>Continues <strong>3</strong> wrong guesses, then you lost and can't continue.</li> -->
+                        <li>Enjoy the GUESS GAME</li>
+                    </ul>
+                    <div class="btn">
+                        <button><a href="generate.html">continue</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-line">
+            <span class="copyrights">The guess game created by <strong>OMEGA </strong>and copyrights @2022-2024</span>
+        </div>
+    </div>
+    
+    <script src="scripts/menu.js"></script>
+    <script>
+        const no_img = document.getElementsByClassName("for-guess");
+        for (let i = 0; i < no_img.length; i++) {
+            const element = no_img[i];
+            element.style.opacity=0
+        }
+    </script>
+</body>
+</html>
