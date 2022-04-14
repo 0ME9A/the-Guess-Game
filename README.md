@@ -1,7 +1,6 @@
 # The-Guess-Game
 The GUESS GAME based on real life programming challenge guess the number.
 <br>
-<br>
 - The GUESS GAME with html, css JAVASCRIPT
 <br>
 <br>
