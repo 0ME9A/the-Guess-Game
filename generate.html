@@ -12,30 +12,11 @@
 <body>
     <div class="main-container">
         <nav>
-            <h1>
-                <a href="index.html">omega</a>
-            </h1>
+            <a href="index.html" class="brand-title"><img src="icon/Group 15.png" class="brand" alt="brand"><strong>THE GUESS GAME</strong></a>
             <ul class="desk-nav-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="https://github.com/heyomega/The-Guess-Game" class="git-btn">⭐ STAR ON GITHUB</a></li>
             </ul>
-            <menu>
-                <div class="menu"></div>
-                <div class="menu"></div>
-                <div class="menu"></div>
-            </menu>
         </nav>
-        <div class="phone-nav">
-            <ul id="phone-nav-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-            <button id="phone-nav-btn">Close</button>
-        </div>
         <div class="content-container">
             <div class="guess-img">
                 <div class="img-container">
@@ -59,13 +40,13 @@
             </div>
             <div class="text-container">
                 <div class="text">
-                    <div class="welcome">
-                        <h1>omni start</h1>
-                    </div>
                     <div class="some-information">
                         <form action="guess.html" method="get" id="level">
+                            <div class="welcome">
+                                <input type="text" placeholder="Enter you full name, only alphabet." id="form-user-name" name="user" value="" required>
+                            </div>
+                            <strong id="level-title">Select hardness level</strong>
                             <ul class="select-level">
-                                <strong>Select hardness level</strong>
                                 <li>
                                     <input type="radio" name="level" id="beginer" value="beginer" checked/><label
                                         for="beginer">Beginer</label>
@@ -97,15 +78,16 @@
                     </div>
                     <div class="btn">
 
-                        <button form="level" type="submit">start</button>
+                        <button form="level" type="submit" id="form-submit-btn">start</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-line"></div>
+        <div class="footer-line">
+            <span class="copyrights">The guess game created by <a href="https://github.com/heyomega/The-Guess-Game" target="_blank" class="profile-link">OMEGA</a></span>
+        </div>
     </div>
 
-    <script src="scripts/menu.js"></script>
     <script>
         var elements = document.getElementsByClassName("for-guess");
         const points2 = [
@@ -137,15 +119,33 @@
             if (time_out > 250) {
                 clearInterval(Time);
             } else {
-                console.log(time_out);
+                // console.log(time_out);
                 var rand = suffle(points2);
                 for (let i = 0; i < points2.length; i++) {
                     const element = rand[i];
                     elements[i].src = element;
-                    console.log(elements[i]);
+                    // console.log(elements[i]);
                 }
             }
         }, 1000);
+
+
+        let form_submit_btn = document.getElementById("form-submit-btn");
+        let form_user_name = document.getElementById("form-user-name");
+        console.log(window.location.pathname)
+        let regEx = /([A-Za-z]+\s+[a-zA-Z]+)+$/g;
+        if(window.location.pathname == "/generate.html"){
+            setInterval(() => {
+                if (form_user_name.value.length <20 && form_user_name.value.length >3 && form_user_name.value.match(regEx)) {
+                    form_submit_btn.disabled = false;
+                }
+                else{
+                    form_submit_btn.disabled = true;
+                }
+            }, 1000);
+        }
+
+
     </script>
 </body>
 
